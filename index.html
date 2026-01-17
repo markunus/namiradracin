@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="NamiraHub - Platform Streaming Drama Indonesia Terlengkap. Nonton drama Asia dengan kualitas HD, gratis dan tanpa iklan.">
+    <meta name="keywords"
+        content="drama indonesia, streaming drama, drama asia, nonton drama online, drama series, NamiraHub">
+    <meta name="author" content="NamiraHub">
+    <meta name="theme-color" content="#0a0a0f">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="NamiraHub - Streaming Drama Indonesia">
+    <meta property="og:description" content="Nonton drama series Indonesia terlengkap dengan kualitas HD">
+    <meta property="og:type" content="website">
+
+    <title>NamiraHub - Streaming Drama Indonesia Terlengkap</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-icon">
+                <span class="loader-n">N</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo" id="logo-link">
+                <div class="logo-icon">N</div>
+                <span class="logo-text">Namira<span class="logo-accent">Hub</span></span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active">Beranda</a>
+                <a href="#recommended-section" class="nav-link">Populer</a>
+                <a href="#discovery-section" class="nav-link">Terbaru</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-wrapper" id="search-wrapper">
+                    <button class="search-toggle" id="search-toggle">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                            <path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    <div class="search-box" id="search-box">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                            <path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <input type="text" id="search-input" placeholder="Cari drama..." autocomplete="off">
+                        <button class="search-close" id="search-close">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Results Dropdown -->
+        <div class="search-results" id="search-results"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="main-content">
+        <!-- Featured Hero Banner -->
+        <section class="featured-hero" id="featured-hero">
+            <div class="featured-backdrop" id="featured-backdrop"></div>
+            <div class="featured-gradient"></div>
+            <div class="featured-content">
+                <div class="featured-tag">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    Rekomendasi Hari Ini
+                </div>
+                <h1 class="featured-title" id="featured-title">Memuat...</h1>
+                <p class="featured-desc" id="featured-desc">Menunggu data drama untuk ditampilkan.</p>
+                <div class="featured-meta">
+                    <span class="meta-badge">HD</span>
+                    <span class="meta-badge">Drama</span>
+                    <span class="meta-badge">2024</span>
+                </div>
+                <div class="featured-actions">
+                    <button class="btn-play" id="featured-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 4L20 12L6 20V4Z" />
+                        </svg>
+                        Tonton Sekarang
+                    </button>
+                    <button class="btn-info" id="featured-info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 16V12M12 8H12.01" />
+                        </svg>
+                        Info Detail
+                    </button>
+                </div>
+            </div>
+
+            <!-- Featured Navigation -->
+            <div class="featured-nav">
+                <button class="featured-nav-btn" id="featured-prev">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18L9 12L15 6" />
+                    </svg>
+                </button>
+                <div class="featured-dots" id="featured-dots"></div>
+                <button class="featured-nav-btn" id="featured-next">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18L15 12L9 6" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Quick Categories -->
+        <section class="quick-categories">
+            <div class="container">
+                <div class="category-chips">
+                    <button class="chip active" data-filter="all">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 6H20V8H4V6ZM4 11H20V13H4V11ZM4 16H20V18H4V16Z" />
+                        </svg>
+                        Semua
+                    </button>
+                    <button class="chip" data-filter="recommended">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                        Populer
+                    </button>
+                    <button class="chip" data-filter="discovery">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M14.5 9L9.5 11.5L11.5 16.5L16.5 14L14.5 9Z" fill="var(--bg-primary)" />
+                        </svg>
+                        Terbaru
+                    </button>
+                    <button class="chip" data-filter="romance">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" />
+                        </svg>
+                        Romantis
+                    </button>
+                    <button class="chip" data-filter="action">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" />
+                        </svg>
+                        Aksi
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drama Sections -->
+        <section class="drama-section" id="recommended-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title-wrapper">
+                        <h2 class="section-title">
+                            <span class="title-icon">🔥</span>
+                            Sedang Trending
+                        </h2>
+                        <p class="section-subtitle">Drama paling banyak ditonton minggu ini</p>
+                    </div>
+                    <button class="see-all-btn">
+                        Lihat Semua
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18L15 12L9 6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="drama-carousel">
+                    <button class="carousel-btn prev" data-target="recommended-grid">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18L9 12L15 6" />
+                        </svg>
+                    </button>
+                    <div class="drama-scroll" id="recommended-grid"></div>
+                    <button class="carousel-btn next" data-target="recommended-grid">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18L15 12L9 6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="drama-section" id="discovery-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title-wrapper">
+                        <h2 class="section-title">
+                            <span class="title-icon">✨</span>
+                            Baru Ditambahkan
+                        </h2>
+                        <p class="section-subtitle">Drama terbaru yang siap kamu tonton</p>
+                    </div>
+                    <button class="see-all-btn">
+                        Lihat Semua
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18L15 12L9 6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="drama-carousel">
+                    <button class="carousel-btn prev" data-target="discovery-grid">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18L9 12L15 6" />
+                        </svg>
+                    </button>
+                    <div class="drama-scroll" id="discovery-grid"></div>
+                    <button class="carousel-btn next" data-target="discovery-grid">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18L15 12L9 6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Load More -->
+        <div class="load-more-section">
+            <button class="load-more-btn" id="load-more-btn">
+                <svg class="loading-spinner" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.3" />
+                    <path d="M12 2C6.48 2 2 6.48 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <span>Muat Lebih Banyak</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">N</div>
+                        <span>Namira<span class="logo-accent">Hub</span></span>
+                    </div>
+                    <p>Platform streaming drama Indonesia terlengkap dengan kualitas hingga 4K Ultra HD. Gratis, tanpa
+                        iklan, dan tersedia 24/7.</p>
+                </div>
+                <div class="footer-stats">
+                    <div class="footer-stat">
+                        <span class="stat-value">500+</span>
+                        <span class="stat-label">Drama</span>
+                    </div>
+                    <div class="footer-stat">
+                        <span class="stat-value">4K</span>
+                        <span class="stat-label">Ultra HD</span>
+                    </div>
+                    <div class="footer-stat">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Streaming</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NamiraHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Player Modal -->
+    <div class="player-overlay" id="player-overlay">
+        <div class="player-container">
+            <!-- Player Header -->
+            <div class="player-header">
+                <button class="back-btn" id="back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" />
+                    </svg>
+                    <span>Kembali</span>
+                </button>
+                <div class="player-info">
+                    <h3 class="player-title" id="player-title">Loading...</h3>
+                    <span class="player-episode" id="player-episode">Episode 1</span>
+                </div>
+                <div class="player-settings">
+                    <div class="auto-next-toggle">
+                        <span>Auto Next</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="auto-next-toggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Player -->
+            <div class="video-wrapper">
+                <video id="video-player" playsinline>
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Custom Controls -->
+                <div class="video-controls" id="video-controls">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar">
+                            <div class="progress-filled" id="progress-filled"></div>
+                            <div class="progress-buffered" id="progress-buffered"></div>
+                            <div class="progress-thumb" id="progress-thumb"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="current-time">0:00</span>
+                            <span>/</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                    </div>
+
+                    <div class="controls-row">
+                        <div class="controls-left">
+                            <button class="control-btn" id="prev-episode-btn" title="Episode Sebelumnya">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 5L9 12L19 19V5Z" />
+                                    <rect x="5" y="5" width="3" height="14" />
+                                </svg>
+                            </button>
+                            <button class="control-btn play-btn" id="play-btn" title="Play/Pause">
+                                <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 4L20 12L6 20V4Z" />
+                                </svg>
+                                <svg class="pause-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="5" y="4" width="5" height="16" />
+                                    <rect x="14" y="4" width="5" height="16" />
+                                </svg>
+                            </button>
+                            <button class="control-btn" id="next-episode-btn" title="Episode Selanjutnya">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 5L15 12L5 19V5Z" />
+                                    <rect x="16" y="5" width="3" height="14" />
+                                </svg>
+                            </button>
+                            <div class="volume-container">
+                                <button class="control-btn" id="mute-btn" title="Mute">
+                                    <svg class="volume-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M11 5L6 9H2V15H6L11 19V5Z" />
+                                        <path
+                                            d="M15.5 8.5C16.29 9.29 16.8 10.36 16.8 11.5C16.8 12.64 16.29 13.71 15.5 14.5"
+                                            stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+                                        <path d="M18 6C19.5 7.5 20.5 9.4 20.5 11.5C20.5 13.6 19.5 15.5 18 17"
+                                            stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+                                    </svg>
+                                    <svg class="mute-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M11 5L6 9H2V15H6L11 19V5Z" />
+                                        <path d="M16 9L22 15M22 9L16 15" stroke="currentColor" stroke-width="2"
+                                            fill="none" stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                                <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1"
+                                    value="1">
+                            </div>
+                        </div>
+
+                        <div class="controls-right">
+                            <div class="quality-selector">
+                                <button class="control-btn quality-btn" id="quality-btn" title="Kualitas">
+                                    <span id="current-quality">Auto</span>
+                                </button>
+                                <div class="quality-menu hidden" id="quality-menu">
+                                    <button data-quality="2160p">4K Ultra HD</button>
+                                    <button data-quality="1440p">2K QHD</button>
+                                    <button data-quality="1080p">1080p Full HD</button>
+                                    <button data-quality="720p">720p HD</button>
+                                    <button data-quality="540p">540p</button>
+                                    <button data-quality="480p">480p</button>
+                                    <button data-quality="360p">360p</button>
+                                    <button data-quality="240p">240p</button>
+                                </div>
+                            </div>
+                            <button class="control-btn" id="pip-btn" title="Picture in Picture">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <rect x="11" y="11" width="9" height="7" rx="1" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <button class="control-btn" id="fullscreen-btn" title="Fullscreen">
+                                <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M3 8V5C3 3.9 3.9 3 5 3H8M16 3H19C20.1 3 21 3.9 21 5V8M21 16V19C21 20.1 20.1 21 19 21H16M8 21H5C3.9 21 3 20.1 3 19V16" />
+                                </svg>
+                                <svg class="compress-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 3V6C9 7.1 8.1 8 7 8H4M15 3V6C15 7.1 15.9 8 17 8H20M20 16H17C15.9 16 15 16.9 15 18V21M4 16H7C8.1 16 9 16.9 9 18V21" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div class="video-loading hidden" id="video-loading">
+                    <div class="spinner"></div>
+                </div>
+
+                <!-- Next Episode Overlay -->
+                <div class="next-episode-overlay hidden" id="next-episode-overlay">
+                    <div class="next-episode-content">
+                        <p>Episode selanjutnya dalam</p>
+                        <span class="countdown" id="countdown">5</span>
+                        <div class="next-episode-actions">
+                            <button class="cancel-btn" id="cancel-next">Batal</button>
+                            <button class="play-next-btn" id="play-next">Putar Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Episode List -->
+            <div class="episode-panel">
+                <div class="episode-header">
+                    <h4>Daftar Episode</h4>
+                    <span class="episode-count" id="episode-count">0 Episode</span>
+                </div>
+                <div class="episode-list" id="episode-list"></div>
+            </div>
+
+            <!-- Series Description -->
+            <div class="series-description" id="series-description">
+                <h4>Sinopsis</h4>
+                <p id="description-text">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
